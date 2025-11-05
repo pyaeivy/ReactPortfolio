@@ -9,7 +9,7 @@ export const RevealOnScreen = ({children}) =>{
             if(entry.isIntersecting){
                 ref.current.classList.add("visible");
             }
-        },{threshold: .2, rootMargin: "0px 0px -50px 0px"}
+        },{threshold: .2, rootMargin: "0px 0px -50px -50px"}
     );
     if(ref.current) observer.observe(ref.current);
     return () => observer.disconnect();

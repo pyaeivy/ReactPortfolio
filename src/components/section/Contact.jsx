@@ -6,6 +6,7 @@ export const Contact = () =>{
     const [ formData, setFormData] = useState({
         name : "",
         email : "",
+        time : Date,
         message : "",
     })
 
@@ -18,8 +19,9 @@ export const Contact = () =>{
               e.target, 
               import.meta.env.VITE_PUBLIC_KEY)
         .then( () => {
+            setFormData({name: FormData.name, email: FormData.email, time : Date.now ,message: FormData.message })
             alert("Messange sent!");
-            setFormData({name: FormData.name, email: FormData.email, message: FormData.message })
+            setFormData({name: "", email: "", message: ""});
         })
         .catch( () => alert("Oops! Something went wrong, Please try again."));
     }
@@ -34,6 +36,7 @@ export const Contact = () =>{
                         {""}
                         Get In Touch
                     </h2>
+                    
                     <form
                     className="space-y-6"
                     onSubmit={handleSubmit}
@@ -42,10 +45,11 @@ export const Contact = () =>{
                             <input 
                             type="text" 
                             id="name" 
+                            name = "name"
                             required
                             value={formData.name}
                             className="w-full bg-white/5 border border-white/10 rounded-[10px] px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
-                            placeholder="Name.."
+                            placeholder="Your Name.."
                             onChange={(e) => setFormData({...formData, name: e.target.value})}
                             />
 
@@ -54,10 +58,11 @@ export const Contact = () =>{
                             <input 
                             type="email" 
                             id="email" 
+                            name = "email"
                             required 
                             value={formData.email}
                             className="w-full bg-white/5 border border-white/10 rounded-[10px] px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
-                            placeholder="Example@gamil.com"
+                            placeholder="your email Example@gamil.com"
                              onChange={(e) => setFormData({...formData, email: e.target.value})}
                             />
 

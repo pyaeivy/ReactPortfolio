@@ -5,8 +5,9 @@ export const Home = () =>{
     <section 
     id="home"
      className="min-h-screen flex justify-center items-center relative" >
-     <RevealOnScreen>
+    <RevealOnScreen>
        <div className="text-center z-10 px-4">
+            
             <h1 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent leading-right">
                 Hi, I'm Pyae Phyo Thaw
             </h1>
