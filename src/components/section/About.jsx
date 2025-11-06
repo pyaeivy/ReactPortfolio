@@ -59,6 +59,21 @@ export const About = () => {
                   </div>
                 </div>
               </div>
+              <div className="flex flex-col">
+                <h1 className="text-xl font-bold mb-4">Tools</h1>
+                <span className="flex gap-3">
+                    {["VS Code", "Git", "GitHub", "Postman", "Eclipse", "Intellij IDEA"].map((tool, key) => (
+                      <span
+                        key={key}
+                        className="bg-blue-500/10 py-1 px-3 rounded-full text-sm text-blue-500 hover:bg-blue-500/20
+                                                    hover:shadow[0_2px_8px_darkblue] transition cursor-pointer
+                                    " >
+                        {tool}
+                        
+                      </span>
+                    ))}
+                </span>
+              </div>
             </div>
 
             <div className="grid grid-cols-2 gap-6 mt-8">
@@ -134,7 +149,6 @@ export const About = () => {
                   <FaLinkedin />
                 </a>
               </span>
-             
             </div>
           </div>
         </RevealOnScreen>
