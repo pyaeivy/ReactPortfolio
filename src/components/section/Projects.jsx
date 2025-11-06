@@ -43,7 +43,7 @@ export const Projects = () => {
                   className="border border-white/30 rounded-[10px] mt-2"
                 >
                   <source
-                    src="./src/video/personalFinanceTracker.mp4"
+                    src="/video/personalFinanceTracker.mp4"
                     type="video/mp4"
                   />
                   Your browser does not support the video tag.
@@ -82,7 +82,7 @@ export const Projects = () => {
               </div>
               <div>
                 <img
-                  src="./src/images/Flame.png"
+                  src="/images/Flame.png"
                   alt="Flame.jpg"
                   className="border border-white/30 rounded-[10px] mt-2"
                 ></img>
@@ -120,7 +120,7 @@ export const Projects = () => {
               </div>
               <div>
                 <img
-                  src="./src/images/Clock.png"
+                  src="/images/Clock.png"
                   alt="Flame.jpg"
                   className="border border-white/30 rounded-[10px] mt-2 "
                 ></img>
@@ -154,7 +154,7 @@ export const Projects = () => {
               </div>
               <div>
                 <img
-                  src="./src/images/CssAni2.png"
+                  src="/images/CssAni2.png"
                   alt="Flame.jpg"
                   className="border border-white/30 rounded-[10px] mt-2 "
                 ></img>

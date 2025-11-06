@@ -6,7 +6,7 @@ export const Contact = () =>{
     const [ formData, setFormData] = useState({
         name : "",
         email : "",
-        time : Date,
+        time : Date.now(),
         message : "",
     })
 
@@ -19,7 +19,7 @@ export const Contact = () =>{
               e.target, 
               import.meta.env.VITE_PUBLIC_KEY)
         .then( () => {
-            setFormData({name: FormData.name, email: FormData.email, time : Date.now ,message: FormData.message })
+            setFormData({name: formData.name, email: formData.email ,message: formData.message })
             alert("Messange sent!");
             setFormData({name: "", email: "", message: ""});
         })
@@ -73,7 +73,7 @@ export const Contact = () =>{
                             id="message"
                             name="message"
                              required
-                             value={FormData.message}
+                             value={formData.message}
                              rows={5} 
                              className="w-full bg-white/5 border border-white/10 rounded-[10px] px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
                             placeholder="Your Message..."
