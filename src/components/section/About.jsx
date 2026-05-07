@@ -1,157 +1,139 @@
 import { RevealOnScreen } from "./RevealOnScreen";
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa6";
-import { MdMail } from "react-icons/md";
+
+const frontendSkills = ["HTML", "CSS", "JavaScript", "React", "Angular", "TypeScript", "Tailwindcss", "Bootstrap"];
+const backendSkills  = ["JAVA", "SpringBoot", "MySQL", "JPA", "PostgreSQL"];
+const tools          = ["VS Code", "Git", "GitHub", "Postman", "Eclipse", "IntelliJ IDEA"];
+
+const SkillBadge = ({ label }) => (
+  <span className="bg-blue-500/10 py-1 px-3 rounded-full text-sm text-blue-500
+                   hover:bg-blue-500/20 transition cursor-pointer">
+    {label}
+  </span>
+);
 
 export const About = () => {
-    const frontendSkills = ["HTML","CSS","JavaScript","React", "Angular",  "TypeScript", "Tailwindcss", "Bootstrap"];
-    const backendSkills = [ "JAVA", "SpringBoot", "Mysql" , "JPA" ];
-    return (
-      <section
-        id="about"
-        className="min-h-screen flex items-center justify-center py-20"
-      >
-        <RevealOnScreen>
-          <div className="max-w-4xl mx-auto px-4">
-            <h2
-              className="text-3xl font-bold mb-8 bg-gradient-to-r
-                from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center
-                "
-            >
-              {""}
-              About Me
-            </h2>
-            <div className="rounded-xl p-8 border-whit/10 border hover:-translate-y-1 transition-all">
-              <p className="text-gray-300 mb-6">
-                Passionate developer with expertise in building scalable web
-                applications and creating innovative solutions.
-              </p>
+  return (
+    <section
+      id="about"
+      className="min-h-screen flex items-center justify-center py-20"
+    >
+      <RevealOnScreen>
+        <div className="max-w-4xl mx-auto px-4 w-full">
 
-              <div className="grid grid-clos-1 md:grid-cols-2 gap-6">
-                <div className="rounded-xl p-6 hover:-tanslate-y-1 transition-all">
-                  <h3 className="text-xl font-bold mb-4">Frontend</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {frontendSkills.map((tech, key) => (
-                      <span
-                        key={key}
-                        className="bg-blue-500/10  py-1 px-3 rounded-full text-sm text-blue-500 hover:bg-blue-500/20
-                                                    hover:shadow[0_2px_8px_rgba(59,130,2246,.2)] transition cursor-pointer
-                                    "
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+          {/* Heading */}
+          <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r
+            from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
+            About Me
+          </h2>
 
-                <div className="rounded-xl p-6 hover:-tanslate-y-1 transition-all">
-                  <h3 className="text-xl font-bold mb-4">Backend</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {backendSkills.map((tech, key) => (
-                      <span
-                        key={key}
-                        className="bg-blue-500/10 py-1 px-3 rounded-full text-sm text-blue-500 hover:bg-blue-500/20
-                                                    hover:shadow[0_2px_8px_darkblue] transition cursor-pointer
-                                    "
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+          {/* Skills card */}
+          <div className="rounded-xl p-4 sm:p-8 border border-gray-200 dark:border-white/10
+                          hover:-translate-y-1 transition-all">
+            <p className="text-gray-600 dark:text-gray-300 mb-6">
+              Passionate developer with expertise in building scalable web
+              applications and creating innovative solutions.
+            </p>
+
+            {/* Frontend & Backend grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
+                <h3 className="text-xl font-bold mb-4">Frontend</h3>
+                <div className="flex flex-wrap gap-2">
+                  {frontendSkills.map((tech, key) => <SkillBadge key={key} label={tech} />)}
                 </div>
               </div>
-              <div className="flex flex-col">
-                <h1 className="text-xl font-bold mb-4">Tools</h1>
-                <span className="flex gap-3">
-                    {["VS Code", "Git", "GitHub", "Postman", "Eclipse", "Intellij IDEA"].map((tool, key) => (
-                      <span
-                        key={key}
-                        className="bg-blue-500/10 py-1 px-3 rounded-full text-sm text-blue-500 hover:bg-blue-500/20
-                                                    hover:shadow[0_2px_8px_darkblue] transition cursor-pointer
-                                    " >
-                        {tool}
-                        
-                      </span>
-                    ))}
-                </span>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-6 mt-8">
-              <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
-                <h3 className="font-bold  mb-4">Education</h3>
-                <ul className="list-disc list-inside text-gray-300 space-y-2 ">
-                  <li>
-                    <strong>B.A English</strong> - Dagon University (2025 -
-                    Present)
-                  </li>
-                  <li>
-                    JavaSpring (SpringBoot) - JDC (Java Developer Calss - Sayar
-                    Zaw Min Lwin)
-                  </li>
-                  <li>A+ (YGN-NET)</li>
-                </ul>
-              </div>
-              <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
-                <h3 className="font-bold  mb-4">Profile</h3>
-                <div className="space-y-4 text-gray-300">
-                  <div className="flex gap-2">
-                    <h4
-                      className="font-semibold text-transparent
-                                    bg-clip-text bg-gradient-to-b from-blue-500 to-cyan-400"
-                    >
-                      Pyae Phyo Thaw
-                    </h4>
-                    <p>(Junior Full-Stack Developer)</p>
-                  </div>
-                  <div className="flex gap-6">
-                    <h4 className="font-semibold">Email :</h4>
-                    <p>pyaephyothaw200@gmail.com</p>
-                  </div>
-                  <div className="flex gap-4">
-                    <h4 className="font-semibold">Phone :</h4>
-                    <p>+959 750064068</p>
-                  </div>
-                  <div className="flex gap-2">
-                    <h4 className="font-semibold">Address :</h4>
-                    <p className="w-3/5">
-                      No.611 Anawyahtar Road, South Dagon , Yangon
-                    </p>
-                  </div>
-                  <div className="flex gap-8">
-                    <h4 className="font-semibold">NRC :</h4>
-                    <p className="w-3/5">12/ DAGATA (N) / 118422</p>
-                  </div>
+              <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
+                <h3 className="text-xl font-bold mb-4">Backend</h3>
+                <div className="flex flex-wrap gap-2">
+                  {backendSkills.map((tech, key) => <SkillBadge key={key} label={tech} />)}
                 </div>
               </div>
             </div>
-            <div className="flex gap-3 justify-center mt-8">
-              <span className="px-2 py-2 rounded-full border-white/30 border hover:-translate-y-1 transition-all">
-                <a
-                  href="https://www.facebook.com/pyae.phyo.thaw.94794?mibextid=ZbWKwL"
-                  className="text-gray-300 hover:text-blue-500 text-2xl transition-colors"
-                >
-                  <FaFacebook />
-                </a>
-              </span>
-              <span className="px-2 py-2 rounded-full border-white/30 border hover:-translate-y-1 transition-all">
-                <a
-                  href="https://github.com/pyaeivy"
-                  className="text-gray-300 hover:text-blue-500 text-2xl transition-colors"
-                >
-                  <FaGithub />
-                </a>
-              </span>
-              <span className="px-2 py-2 rounded-full border-white/30 border hover:-translate-y-1 transition-all">
-                <a
-                  href="https://www.linkedin.com/in/pyae-phyo-thaw-673352289?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BnF2vEyEzS22r5mfuHlNhPA%3D%3D"
-                  className="text-gray-300 hover:text-blue-500 text-2xl transition-colors"
-                >
-                  <FaLinkedin />
-                </a>
-              </span>
+
+            {/* Tools */}
+            <div className="flex flex-col mt-4">
+              <h3 className="text-xl font-bold mb-4">Tools</h3>
+              <div className="flex flex-wrap gap-3">
+                {tools.map((tool, key) => <SkillBadge key={key} label={tool} />)}
+              </div>
             </div>
           </div>
-        </RevealOnScreen>
-      </section>
-    );
-}
+
+          {/* Education & Profile grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+
+            {/* Education */}
+            <div className="p-6 rounded-xl border border-gray-200 dark:border-white/10
+                            hover:-translate-y-1 transition-all">
+              <h3 className="font-bold mb-4">Education</h3>
+              <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
+                <li>
+                  <strong>B.A English</strong> — Dagon University (2025 – Present)
+                </li>
+                <li>
+                  JavaSpring (SpringBoot) — JDC (Java Developer Class — Sayar Zaw Min Lwin)
+                </li>
+                <li>A+ (YGN-NET)</li>
+              </ul>
+            </div>
+
+            {/* Profile */}
+            <div className="p-6 rounded-xl border border-gray-200 dark:border-white/10
+                            hover:-translate-y-1 transition-all">
+              <h3 className="font-bold mb-4">Profile</h3>
+              <div className="space-y-3 text-gray-600 dark:text-gray-300 text-sm">
+                <div className="flex flex-col sm:flex-row gap-1">
+                  <span className="font-semibold text-transparent bg-clip-text
+                                   bg-gradient-to-b from-blue-500 to-cyan-400 shrink-0">
+                    Pyae Phyo Thaw
+                  </span>
+                  <span>(Junior Full-Stack Developer)</span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <span className="font-semibold shrink-0">Email:</span>
+                  <span className="break-all">pyaephyothaw200@gmail.com</span>
+                </div>
+                <div className="flex gap-2">
+                  <span className="font-semibold shrink-0">Phone:</span>
+                  <span>+959 750064068</span>
+                </div>
+                <div className="flex gap-2">
+                  <span className="font-semibold shrink-0">Address:</span>
+                  <span>No.611 Anawyahtar Road, South Dagon, Yangon</span>
+                </div>
+                <div className="flex gap-2">
+                  <span className="font-semibold shrink-0">NRC:</span>
+                  <span>12/ DAGATA (N) / 118422</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Social links */}
+          <div className="flex gap-3 justify-center mt-8">
+            {[
+              { href: "https://www.facebook.com/pyae.phyo.thaw.94794?mibextid=ZbWKwL", icon: <FaFacebook /> },
+              { href: "https://github.com/pyaeivy", icon: <FaGithub /> },
+              { href: "https://www.linkedin.com/in/pyae-phyo-thaw-673352289", icon: <FaLinkedin /> },
+            ].map(({ href, icon }, i) => (
+              <span key={i}
+                className="px-2 py-2 rounded-full border border-gray-300 dark:border-white/30
+                           hover:-translate-y-1 transition-all">
+                <a
+                  href={href}
+                  target="_blank" rel="noreferrer"
+                  className="text-gray-500 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400
+                             text-2xl transition-colors block"
+                >
+                  {icon}
+                </a>
+              </span>
+            ))}
+          </div>
+
+        </div>
+      </RevealOnScreen>
+    </section>
+  );
+};

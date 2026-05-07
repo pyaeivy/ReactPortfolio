@@ -13,22 +13,35 @@ import { Footer } from './components/Footer';
 
 
 function App() {
-  const [isLoading,setIsloading] = useState(false);
+  const [isLoading, setIsloading] = useState(false);
   const [menuOpen, setMeunOpen] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   return <>
-  {!isLoading && <LoadingScreen onComplete= {() => setIsloading(true)} />}
-    <div className={`min-h-screen transition-opacity duration-700 
-      ${isLoading ? "opacity-100" : "opacity-0"} bg-black text-gray-100`}
-      >
-        <Navbar menuOpen={menuOpen}  setMeunOpen={setMeunOpen}/>;        
-        <MobileMenu menuOpen={menuOpen}  setMeunOpen={setMeunOpen}/>;
-        <Home />
-        <About />
-        <Projects />
-        
-        <Contact />
-        <Footer/>
+    {!isLoading && <LoadingScreen onComplete={() => setIsloading(true)} />}
+    <div
+      className={`min-h-screen transition-opacity duration-700
+        ${isLoading ? "opacity-100" : "opacity-0"}
+        ${darkMode
+          ? "dark bg-gray-950 text-gray-100"
+          : "bg-gray-50 text-gray-900"}`}
+    >
+      <Navbar
+        menuOpen={menuOpen}
+        setMeunOpen={setMeunOpen}
+        darkMode={darkMode}
+        setDarkMode={setDarkMode}
+      />
+      <MobileMenu
+        menuOpen={menuOpen}
+        setMeunOpen={setMeunOpen}
+        darkMode={darkMode}
+      />
+      <Home />
+      <About />
+      <Projects />
+      <Contact />
+      <Footer />
     </div>
   </>;
 }
